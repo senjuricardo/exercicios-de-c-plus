@@ -13,14 +13,29 @@ using namespace std::this_thread; // sleep_for, sleep_until
 using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
 using std::chrono::system_clock;
 
+int intro(int *vecID, string* vecPess) {
+	int a;
+	for (int i = 0; i < 5; i++) {
+		cout << "-----------------------------" << endl;
+		cout << " || o ID " <<"["<< vecID[i]<< "]" << " corresponde a "<<  vecPess[i] <<" ||"<< endl;
+		cout << "-----------------------------" << endl;
+	}
+
+	cout << "Digite o seu id: ";
+	cin >> a;
+
+
+	return a;
+}
+
 double checkout(string* vecNomes, int* vec, double* vecPre);
+
 void venda(string* vecNomes, int* vec, double* vecPre) {
 	cout << "Computador [1]: " << vec[0] << endl;
 	cout << "telemovel[2]: " << vec[1] << endl;
 	cout << "rato[3]: " << vec[2] << endl;
 	cout << "fones[4]: " << vec[3] << endl;
 	cout << "teclado[5]: " << vec[4] << endl;
-
 
 	int op, quant, quant1, quant2, quant3, quant4;
 	cin >> op;
@@ -80,7 +95,6 @@ void venda(string* vecNomes, int* vec, double* vecPre) {
 							}
 						}
 		
-		
 		cout << "Computador [1]: " << vec[0] << endl;
 		cout << "telemovel[2]: " << vec[1] << endl;
 		cout << "rato[3]: " << vec[2] << endl;
@@ -93,9 +107,6 @@ void venda(string* vecNomes, int* vec, double* vecPre) {
 		checkout(vecNomes, vec, vecPre);
 	}
 	} while (op != 0);
-
-	
-	
 }
 
 double checkout(string* vecNomes, int* vec, double* vecPre) {
@@ -121,31 +132,22 @@ double checkout(string* vecNomes, int* vec, double* vecPre) {
 
 			
 			sleep_for(10ns);
-			sleep_until(system_clock::now() + 3s);
+			sleep_until(system_clock::now() + 5s);
 			system("cls");
 		}
 
-		//bool menuUm(string* vecNomes, int* vec, double* vecPre) {}
-	
-
-
 int main()
-{	
-	
-	setlocale(LC_ALL, ("portuguese"));
+{		setlocale(LC_ALL, ("portuguese"));
 
 	int vec[] = { 5,5,5,5,5 };
-	string vecNomes[] = { "computador",
-							"telemovel",
-							"rato",
-							"fones",
-							"teclado" };
+	string vecNomes[] = { "computador", "telemovel", "rato", "fones", "teclado" };
 	double vecPre[] = { 100.00 , 60.00, 20.00, 15.00, 10.00 };
+	int vecID[] = { 1000, 1001, 1002, 1003, 1004 };
+	string vecPess[] = { "Ricardo",	"Ana", "Goncalo", "Sandra", "Joana" };
 
-
+	int var = intro( vecID, vecPess);
+	
 	menu();
-	//menuUm(vecNomes, vec, vecPre);
-
 	int opc;
 	
 	do {
