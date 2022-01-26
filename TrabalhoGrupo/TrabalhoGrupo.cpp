@@ -119,7 +119,7 @@ double checkout(string* vecNomes, int* vec, double* vecPre) {
 	return venda;
 }
 	
-		void menu() {
+void menu() {
 	
 			cout << "|------------------------------------|" << endl;
 			cout << "|	  ####STORE####              |" << endl;
@@ -134,7 +134,7 @@ double checkout(string* vecNomes, int* vec, double* vecPre) {
 			sleep_for(10ns);
 			sleep_until(system_clock::now() + 5s);
 			system("cls");
-		}
+	}
 
 int main()
 {		setlocale(LC_ALL, ("portuguese"));
