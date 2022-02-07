@@ -12,7 +12,7 @@ using namespace std;
 
     void calcFR(int a, int b, int c, float* x1, float* x2)
     {
-        if (a == 0 || pow(b, 2) - 4 * a * c < 0) {
+        if  (a == 0 || pow(b, 2) - 4 * a * c < 0) {
             *x1 = 0;
             *x1 = 0;
         }
